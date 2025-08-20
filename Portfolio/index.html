@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aliza - Portfolio.in</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Pixel Art Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Desktop Background -->
+  <div class="desktop-bg">
+    <!-- Taskbar -->
+    <div class="taskbar">
+      <div class="start-button">
+        <i class="fas fa-power-off"></i>
+        <span>START</span>
+      </div>
+      <div class="taskbar-time" id="taskbar-time"></div>
+    </div>
+
+    <!-- Desktop Icons -->
+    <div class="desktop-icons">
+      <div class="desktop-icon" data-target="about-window">
+        <i class="fas fa-user"></i>
+        <span>About Me</span>
+      </div>
+      <div class="desktop-icon" data-target="skills-window">
+        <i class="fas fa-code"></i>
+        <span>Skills</span>
+      </div>
+      <div class="desktop-icon" data-target="projects-window">
+        <i class="fas fa-folder"></i>
+        <span>Projects</span>
+      </div>
+      <div class="desktop-icon" data-target="contact-window">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container-fluid p-4">
+      <!-- About Me Window -->
+      <div class="window" id="about-window">
+        <div class="window-header">
+          <div class="window-title">
+            <i class="fas fa-user"></i>
+            About Me - Personal Information
+          </div>
+          <div class="window-controls">
+            <button class="window-btn minimize">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button class="window-btn maximize">
+              <i class="fas fa-square"></i>
+            </button>
+            <button class="window-btn close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="profile-section">
+                <div class="profile-image">
+                  <img src="Profile pic.jpg" alt="Profile" class="pixelated" />
+                </div>
+                <h3 class="pixel-font">ALIZA</h3>
+                <p class="title-text">Software Developer</p>
+                <div class="contact-info">
+                  <p><i class="fas fa-phone"></i>+91 9468096518</p>
+                  <p>
+                    <i class="fas fa-envelope"></i> aliza0254.becse24@chitkara.edu.in
+                  </p>
+                  <p><i class="fas fa-map-marker-alt"></i>Zirakpur</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="bio-section">
+                <h4 class="section-title">Hi, Glad to see you!</h4>
+                <p class="bio-text">
+                  My name is Aliza, and I am a second year Indian student studying Software Engineering, and want to be
+                  a full-stack developer. I am passionate about creativity and persistence; when I am committed to
+                  something, if I start something, I’ll keep going until I figure it out. I enjoy learning new concept
+                  through coding honestly, problem-solving, and other activities I like to do, like painting and
+                  listening to music which influence me. For me, tech is not just about writing code, but also building
+                  things that matter which makes me better every day.
+                </p>
+                <div class="quote-section">
+                  <blockquote class="pixel-quote">
+                    "Art is like people — unique, full of meaning, and a source of inspiration in every way."
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Window -->
+      <div class="window" id="skills-window">
+        <div class="window-header">
+          <div class="window-title">
+            <i class="fas fa-code"></i>
+            Skills & Experience
+          </div>
+          <div class="window-controls">
+            <button class="window-btn minimize">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button class="window-btn maximize">
+              <i class="fas fa-square"></i>
+            </button>
+            <button class="window-btn close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="skills-section">
+                <h4 class="section-title">Technical Skills</h4>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML/CSS</span>
+                    <span class="skill-level">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <i class="fa-solid fa-c"></i>
+                    <span>C</span>
+                    <span class="skill-level">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <i class="fab fa-js"></i>
+                    <span>JS</span>
+                    <span class="skill-level">60%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="60"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Git-Hub</span>
+                    <span class="skill-level">75%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="75"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="skills-section">
+                <h4 class="section-title">More to know</h4>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <i class="fa-solid fa-photo-film"></i>
+                    <span>Photoshop/Video editing </span>
+                    <span class="skill-level">45%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="45"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <i class="fa-solid fa-palette"></i>
+                    <span>Creativity</span>
+                    <span class="skill-level">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <!-- <div class="experience-section">
+                  <h4 class="section-title">Experience</h4>
+                  <div class="experience-item">
+                    <div class="exp-year">2020</div>
+                    <div class="exp-content">
+                      <h5>Marketing Design Assistant</h5>
+                      <p>Herbal OTC - PT Kimia Farma Tbk</p>
+                    </div>
+                  </div>
+                  <div class="experience-item">
+                    <div class="exp-year">2019</div>
+                    <div class="exp-content">
+                      <h5>Product Design, Food & Beverage</h5>
+                      <p>Entrepreneur Festival UMB "Dokter Lembung" Brand</p>
+                    </div>
+                  </div>
+                  <div class="experience-item">
+                    <div class="exp-year">2018</div>
+                    <div class="exp-content">
+                      <h5>Public Relations Secretary</h5>
+                      <p>Student Activity Culture and Language, Japan Club</p>
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+            <div class="col-md-12">
+              <div class="education-section">
+                <h4 class="section-title">Education</h4>
+                <div class="education-item">
+                  <div class="edu-year">2024-2028</div>
+                  <div class="edu-content">
+                    <h5>Chitkara-University</h5>
+                    <p>B.E. in Computer Science & Engineering</p>
+                  </div>
+                </div>
+                <div class="education-item">
+                  <div class="edu-year">2022-2024</div>
+                  <div class="edu-content">
+                    <h5>Clay India Internatinal School</h5>
+                    <p>Senior Division (11-12)</p>
+                  </div>
+                </div>
+                <div class="education-item">
+                  <div class="edu-year">2012-2022</div>
+                  <div class="edu-content">
+                    <h5>Eastwood Internatinal School</h5>
+                    <p>Primary to 10th</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Window -->
+      <div class="window" id="projects-window">
+        <div class="window-header">
+          <div class="window-title">
+            <i class="fas fa-folder"></i>
+            Projects Portfolio
+          </div>
+          <div class="window-controls">
+            <button class="window-btn minimize">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button class="window-btn maximize">
+              <i class="fas fa-square"></i>
+            </button>
+            <button class="window-btn close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="row">
+            <div class="col-md-6 mb-6">
+              <div class="project-card" data-link="https://github.com/Aliza2814/FEE-project-">
+                <div class="project-image">
+                  <img src="https://v3img.voot.com/v3Storage/assets/16x9-1728316195515.jpg" alt="Project 1"
+                    class="pixelated" />
+                </div>
+                <div class="project-info">
+                  <h5>Bigg Boss voting page</h5>
+                  <p>1st sem Frontend Project</p>
+                  <div class="project-tags">
+                    <span class="tag">Branding</span>
+                    <span class="tag">Front End</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-6">
+              <div class="project-card" data-link="https://github.com/ayushi624/Ghost-Mode">
+                <div class="project-image">
+                  <img src="https://minga-test.myshopify.com/cdn/shop/files/capas111.jpg?width=3200" alt="Project 2"
+                    class="pixelated" />
+                </div>
+                <div class="project-info">
+                  <h5>Ghost Mode</h5>
+                  <p>E-commerce clothing website</p>
+                  <div class="project-tags">
+                    <span class="tag">Clone</span>
+                    <span class="tag">Minga-London</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-6">
+              <div class="project-card" data-link="https://github.com/Aliza2814/SmartCampus">
+                <div class="project-image">
+                  <img
+                    src="https://media.istockphoto.com/id/1312039882/vector/coming-soon-loading.jpg?s=612x612&w=0&k=20&c=wIjdvr139iG1IZUVOmSfeLrRx6NXqBMxMJ026kMo2XY="
+                    alt="Project 3" class="pixelated" />
+                </div>
+                <div class="project-info">
+                  <h5>Smart Campus</h5>
+                  <p>In progress</p>
+                  <div class="project-tags"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Window -->
+  <div class="window" id="contact-window">
+    <div class="window-header">
+      <div class="window-title">
+        <i class="fas fa-envelope"></i>
+        Contact Information
+      </div>
+      <div class="window-controls">
+        <button class="window-btn minimize">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button class="window-btn maximize">
+          <i class="fas fa-square"></i>
+        </button>
+        <button class="window-btn close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div class="window-content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="contact-form">
+            <h4 class="section-title">Send Message</h4>
+            <form>
+              <div class="form-group mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control retro-input" id="name" required />
+              </div>
+              <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control retro-input" id="email" required />
+              </div>
+              <div class="form-group mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control retro-input" id="subject" required />
+              </div>
+              <div class="form-group mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control retro-input" id="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn retro-btn">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="contact-info-section">
+            <h4 class="section-title">Contact Details</h4>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Phone</h5>
+                <p>+91 9468096518</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Email</h5>
+                <p>aliza0254.becse24@chitkara.edu.in</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Address</h5>
+                <p>
+                  Zirakpur
+                </p>
+              </div>
+            </div>
+            <div class="social-links">
+              <h5>Follow Me</h5>
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/aliza-014b23331/" class="social-link"><i
+                    class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Aliza2814" class="social-link"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <i class="fas fa-desktop"></i>
+      </div>
+      <h2 class="pixel-font">PORTFOLIO OS</h2>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <p class="loading-text">Loading retro portfolio...</p>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>

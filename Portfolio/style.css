@@ -1,0 +1,849 @@
+/* Import Pixel Art Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
+
+/* Root Variables */
+:root {
+    --primary-color: #FF6B9D;
+    --secondary-color: #4ECDC4;
+    --accent-color: #45B7D1;
+    --bg-color: #C0D9E0;
+    --window-bg: #F0F0F0;
+    --text-color: #333;
+    --border-color: #999;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --pixel-size: 2px;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    overflow-x: hidden;
+}
+
+.pixel-font {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Desktop Background */
+.desktop-bg {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #B8E6B8 25%, #87CEEB 25%, #87CEEB 50%, #B8E6B8 50%, #B8E6B8 75%, #87CEEB 75%);
+    background-size: 20px 20px;
+    position: relative;
+}
+
+/* Taskbar */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, #E6E6E6, #CCCCCC);
+    border-top: 2px solid #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 1000;
+    box-shadow: 0 -2px 4px var(--shadow-color);
+}
+
+.start-button {
+    background: linear-gradient(to bottom, #E6E6E6, #CCCCCC);
+    border: 2px outset #CCCCCC;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.start-button:hover {
+    background: linear-gradient(to bottom, #CCCCCC, #B0B0B0);
+}
+
+.start-button:active {
+    border: 2px inset #CCCCCC;
+}
+
+.taskbar-time {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--text-color);
+}
+
+/* Desktop Icons */
+.desktop-icons {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 80px;
+    text-align: center;
+}
+
+.desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.desktop-icon i {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.desktop-icon span {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    color: var(--text-color);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+/* Window Styles */
+.window {
+    background: var(--window-bg);
+    border: 2px outset #CCCCCC;
+    border-radius: 0;
+    box-shadow: 4px 4px 8px var(--shadow-color);
+    margin: 20px;
+    display: none;
+    position: relative;
+    max-width: 95%;
+    animation: windowOpen 0.5s ease-out;
+}
+
+.window.active {
+    display: block;
+}
+
+@keyframes windowOpen {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.window-header {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.window-btn {
+    width: 20px;
+    height: 20px;
+    border: 1px outset #CCCCCC;
+    background: #E6E6E6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    transition: all 0.2s ease;
+}
+
+.window-btn:hover {
+    background: #CCCCCC;
+}
+
+.window-btn:active {
+    border: 1px inset #CCCCCC;
+}
+
+.window-btn.close {
+    background: #FF6B6B;
+    color: white;
+}
+
+.window-content {
+    padding: 20px;
+    background: var(--window-bg);
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+.window-content::-webkit-scrollbar {
+    width: 16px;
+}
+
+.window-content::-webkit-scrollbar-track {
+    background: #E6E6E6;
+    border: 1px inset #CCCCCC;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+    border: 1px outset #CCCCCC;
+}
+
+.window-content::-webkit-scrollbar-thumb:hover {
+    background: #B0B0B0;
+}
+
+/* Section Titles */
+.section-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #FFE4E1, #E6E6FA);
+    border: 2px inset #CCCCCC;
+    border-radius: 8px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.title-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    width: 16px;
+}
+
+/* Bio Section */
+.bio-section {
+    padding: 20px;
+    background: linear-gradient(135deg, #F0F8FF, #E6F3FF);
+    border: 2px inset #CCCCCC;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.bio-text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.pixel-quote {
+    background: rgba(255, 255, 255, 0.8);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 20px;
+    background: linear-gradient(135deg, #E6FFE6, #F0FFF0);
+    border: 2px inset #CCCCCC;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.skill-header i {
+    font-size: 16px;
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.skill-header span:first-of-type {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    flex-grow: 1;
+}
+
+.skill-level {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    color: var(--primary-color);
+}
+
+.skill-bar {
+    height: 20px;
+    background: #E6E6E6;
+    border: 2px inset #CCCCCC;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    width: 0%;
+    transition: width 2s ease-in-out;
+    position: relative;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%, transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%);
+    background-size: 20px 20px;
+    animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 20px 0;
+    }
+}
+
+/* Experience Section */
+.experience-section, .education-section {
+    padding: 20px;
+    background: linear-gradient(135deg, #FFF8DC, #FFFACD);
+    border: 2px inset #CCCCCC;
+    border-radius: 8px;
+}
+
+.experience-item, .education-item {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.exp-year, .edu-year {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--primary-color);
+    min-width: 60px;
+    margin-right: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.exp-content h5, .edu-content h5 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.exp-content p, .edu-content p {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+/* Project Cards */
+.project-card {
+    background: var(--window-bg);
+    border: 2px outset #CCCCCC;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(45deg, #FFE4E1, #E6E6FA);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-info h5 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.project-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: var(--secondary-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 8px;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+}
+
+/* Contact Form */
+.contact-form {
+    padding: 20px;
+    background: linear-gradient(135deg, #FFF0F5, #FFE4E1);
+    border: 2px inset #CCCCCC;
+    border-radius: 8px;
+}
+
+.form-label {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.retro-input {
+    background: #FFF;
+    border: 2px inset #CCCCCC;
+    border-radius: 0;
+    padding: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.retro-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 107, 157, 0.2);
+}
+
+.retro-btn {
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border: 2px outset var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.retro-btn:hover {
+    background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+.retro-btn:active {
+    border: 2px inset var(--primary-color);
+    transform: translateY(0);
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    padding: 20px;
+    background: linear-gradient(135deg, #E6F3FF, #F0F8FF);
+    border: 2px inset #CCCCCC;
+    border-radius: 8px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: white;
+    font-size: 16px;
+}
+
+.contact-text h5 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.contact-text p {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links h5 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px outset var(--primary-color);
+}
+
+.social-link:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    color: white;
+}
+
+.social-link:active {
+    border: 2px inset var(--primary-color);
+    transform: translateY(0);
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #2C3E50, #34495E);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+}
+
+.loading-logo {
+    font-size: 64px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.loading-content h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.loading-bar {
+    width: 300px;
+    height: 20px;
+    background: #333;
+    border: 2px solid #555;
+    margin: 0 auto 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    width: 0%;
+    animation: loading 3s ease-in-out forwards;
+}
+
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.loading-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #CCC;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0.3;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop-icons {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px;
+    }
+    
+    .desktop-icon {
+        margin-bottom: 10px;
+    }
+    
+    .window {
+        margin: 10px;
+        max-width: 98%;
+    }
+    
+    .window-content {
+        padding: 15px;
+        max-height: 60vh;
+    }
+    
+    .taskbar {
+        position: relative;
+        order: -1;
+    }
+    
+    .pixel-font {
+        font-size: 12px;
+    }
+    
+    .section-title {
+        font-size: 10px;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .project-image {
+        height: 150px;
+    }
+    
+    .experience-item, .education-item {
+        flex-direction: column;
+    }
+    
+    .exp-year, .edu-year {
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    
+    .social-icons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .window-content {
+        padding: 10px;
+    }
+    
+    .pixel-font {
+        font-size: 10px;
+    }
+    
+    .section-title {
+        font-size: 8px;
+    }
+    
+    .loading-bar {
+        width: 250px;
+    }
+    
+    .loading-content h2 {
+        font-size: 14px;
+    }
+    
+    .skill-header span:first-of-type {
+        font-size: 8px;
+    }
+    
+    .project-info h5 {
+        font-size: 8px;
+    }
+    
+    .tag {
+        font-size: 6px;
+    }
+}
+
+/* Animation for window stacking */
+.window {
+    z-index: 10;
+}
+
+.window.active {
+    z-index: 20;
+}
+
+/* Hover effects for interactive elements */
+.window-header:hover {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+}
+
+.desktop-icon:active {
+    transform: scale(0.95);
+}
+
+.project-card:active {
+    transform: translateY(-3px);
+}
+
+/* Additional pixel art styling */
+.pixelated * {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
